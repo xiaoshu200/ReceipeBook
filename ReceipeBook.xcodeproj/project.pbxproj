@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88C6BF7A173E33A7002E7B85 /* ReceipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C6BF79173E33A7002E7B85 /* ReceipeDetailViewController.m */; };
+		88C6BF7D173E443D002E7B85 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C6BF7C173E443D002E7B85 /* AboutViewController.m */; };
+		88C6BF84173E4619002E7B85 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 88C6BF82173E4619002E7B85 /* about.html */; };
+		88C6BF85173E4619002E7B85 /* about.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88C6BF83173E4619002E7B85 /* about.jpg */; };
 		88C83382173CF6E300D766DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C83381173CF6E300D766DF /* UIKit.framework */; };
 		88C83384173CF6E300D766DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C83383173CF6E300D766DF /* Foundation.framework */; };
 		88C83386173CF6E300D766DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C83385173CF6E300D766DF /* CoreGraphics.framework */; };
@@ -21,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88C6BF78173E33A7002E7B85 /* ReceipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceipeDetailViewController.h; sourceTree = "<group>"; };
+		88C6BF79173E33A7002E7B85 /* ReceipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceipeDetailViewController.m; sourceTree = "<group>"; };
+		88C6BF7B173E443D002E7B85 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		88C6BF7C173E443D002E7B85 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		88C6BF82173E4619002E7B85 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		88C6BF83173E4619002E7B85 /* about.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = about.jpg; sourceTree = "<group>"; };
 		88C8337E173CF6E300D766DF /* ReceipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C83381173CF6E300D766DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88C83383173CF6E300D766DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +93,10 @@
 		88C83387173CF6E300D766DF /* ReceipeBook */ = {
 			isa = PBXGroup;
 			children = (
+				88C6BF7B173E443D002E7B85 /* AboutViewController.h */,
+				88C6BF7C173E443D002E7B85 /* AboutViewController.m */,
+				88C6BF78173E33A7002E7B85 /* ReceipeDetailViewController.h */,
+				88C6BF79173E33A7002E7B85 /* ReceipeDetailViewController.m */,
 				88C83390173CF6E300D766DF /* ReceipeBookAppDelegate.h */,
 				88C83391173CF6E300D766DF /* ReceipeBookAppDelegate.m */,
 				88C83399173CF6E300D766DF /* MainStoryboard.storyboard */,
@@ -96,6 +110,8 @@
 		88C83388173CF6E300D766DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88C6BF82173E4619002E7B85 /* about.html */,
+				88C6BF83173E4619002E7B85 /* about.jpg */,
 				88C83389173CF6E300D766DF /* ReceipeBook-Info.plist */,
 				88C8338A173CF6E300D766DF /* InfoPlist.strings */,
 				88C8338D173CF6E300D766DF /* main.m */,
@@ -164,6 +180,8 @@
 				88C83396173CF6E300D766DF /* Default@2x.png in Resources */,
 				88C83398173CF6E300D766DF /* Default-568h@2x.png in Resources */,
 				88C8339B173CF6E300D766DF /* MainStoryboard.storyboard in Resources */,
+				88C6BF84173E4619002E7B85 /* about.html in Resources */,
+				88C6BF85173E4619002E7B85 /* about.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +195,8 @@
 				88C8338E173CF6E300D766DF /* main.m in Sources */,
 				88C83392173CF6E300D766DF /* ReceipeBookAppDelegate.m in Sources */,
 				88C8339E173CF6E300D766DF /* ReceipeBookViewController.m in Sources */,
+				88C6BF7A173E33A7002E7B85 /* ReceipeDetailViewController.m in Sources */,
+				88C6BF7D173E443D002E7B85 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +319,7 @@
 				88C833A3173CF6E300D766DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,23 +1,217 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3103" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c4I-rk-zk7">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Receipe Book View Controller - Receipe Book-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ReceipeBookViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="36r-Bw-MFc">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="455" id="Udo-gD-85B"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" id="JeR-cm-bMO">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="z47-yf-7wa" kind="push" identifier="showRecipeDetail" id="GIz-oW-dLS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="D0p-gp-9RU"/>
+                                    <outlet property="delegate" destination="2" id="SDU-6c-uj5"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nmY-Ou-pyl">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="QRg-u7-6R0"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="36r-Bw-MFc" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="9SV-iP-V1C"/>
+                            <constraint firstItem="36r-Bw-MFc" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="COf-zt-wEO"/>
+                            <constraint firstItem="nmY-Ou-pyl" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="FDT-6x-pWt"/>
+                            <constraint firstItem="36r-Bw-MFc" firstAttribute="top" secondItem="nmY-Ou-pyl" secondAttribute="bottom" type="default" id="R6Z-ah-9Jp"/>
+                            <constraint firstItem="nmY-Ou-pyl" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Vqw-Ch-kfp"/>
+                            <constraint firstItem="nmY-Ou-pyl" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="hdK-N5-H1c"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Receipe Book" id="1nd-Lz-mwn"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="wKq-H6-1tW" id="hj0-WN-LJn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="wKq-H6-1tW">
+                    <connections>
+                        <outlet property="delegate" destination="2" id="s14-IX-Al9"/>
+                        <outlet property="searchBar" destination="nmY-Ou-pyl" id="q0P-hd-CvM"/>
+                        <outlet property="searchContentsController" destination="2" id="MUu-O5-6K4"/>
+                        <outlet property="searchResultsDataSource" destination="2" id="Fjg-nj-QCl"/>
+                        <outlet property="searchResultsDelegate" destination="2" id="pRC-Ef-zZ2"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="739" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qif-CY-taK">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="lDi-sb-Gl0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="rLH-xM-PgZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RtO-lU-iq0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aOA-8Y-fqr" kind="relationship" relationship="rootViewController" id="w68-Ii-bF6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ut-kQ-vho" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="694"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="cGQ-CV-3Jd">
+            <objects>
+                <viewController id="aOA-8Y-fqr" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQ4-Yb-fMk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-Gm-KfF">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ebe-Gm-KfF" firstAttribute="bottom" secondItem="FQ4-Yb-fMk" secondAttribute="bottom" type="default" id="APS-e3-YhS"/>
+                            <constraint firstItem="ebe-Gm-KfF" firstAttribute="leading" secondItem="FQ4-Yb-fMk" secondAttribute="leading" type="default" id="FeN-81-Zo8"/>
+                            <constraint firstItem="ebe-Gm-KfF" firstAttribute="trailing" secondItem="FQ4-Yb-fMk" secondAttribute="trailing" type="default" id="U5e-dw-DWq"/>
+                            <constraint firstItem="ebe-Gm-KfF" firstAttribute="top" secondItem="FQ4-Yb-fMk" secondAttribute="top" type="default" id="nXm-C1-FEL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DF5-DS-ht8"/>
+                    <connections>
+                        <outlet property="webView" destination="ebe-Gm-KfF" id="i6F-zh-bix"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RkC-bA-VQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="692"/>
+        </scene>
+        <!--Receipe Detail View Controller-->
+        <scene sceneID="UVb-7g-Kpw">
+            <objects>
+                <viewController id="z47-yf-7wa" customClass="ReceipeDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nu5-Py-JbP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWU-Hp-ZaL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="RA0-aO-cr1"/>
+                                    <constraint firstAttribute="width" constant="226" id="dOW-Zy-aeI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.63529413938522339" green="0.28235295414924622" blue="0.090196080505847931" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WWU-Hp-ZaL" firstAttribute="leading" secondItem="nu5-Py-JbP" secondAttribute="leading" constant="58" id="31N-DU-8S2"/>
+                            <constraint firstItem="WWU-Hp-ZaL" firstAttribute="top" secondItem="nu5-Py-JbP" secondAttribute="top" constant="59" id="nhg-kt-Kby"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OBM-Fm-w7O"/>
+                    <connections>
+                        <outlet property="recipeLable" destination="WWU-Hp-ZaL" id="akQ-Ly-77D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJM-u5-PAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RBR-Q1-fKb">
+            <objects>
+                <navigationController id="ybK-ro-dVJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="JQ9-0w-dh5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oZ1-74-zmy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="3L2-IF-8iX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TcS-IU-Bsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="36"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZJJ-ed-uyc">
+            <objects>
+                <tabBarController id="c4I-rk-zk7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="uLP-so-G4s"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="znL-iR-R66">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ybK-ro-dVJ" kind="relationship" relationship="viewControllers" id="wDx-mf-ixK"/>
+                        <segue destination="lDi-sb-Gl0" kind="relationship" relationship="viewControllers" id="sQH-Wo-gUa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mAx-rS-DKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="36"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ReceipeBookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceipeBookViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ReceipeDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceipeDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="recipeLable" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

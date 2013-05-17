@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceipeBookViewController : UIViewController
+@interface ReceipeBookViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic,strong) IBOutlet UITableView *tableView;
 
 @end
